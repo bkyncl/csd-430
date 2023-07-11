@@ -1,0 +1,27 @@
+<%-- 
+index.jsp
+Module 8 assignment
+Name: Brittany Kyncl
+Date: 7.4.22
+Course: CSD430
+code exampled from source: "Beginning Jarkarta EE Web Development: 3rd Edition" by Manelli, Zambon
+--%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="kyncl_08.model.CreateModel, kyncl_08.model.DataManager" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Populate Garden Database</title>
+</head>
+<body>
+
+<h2>Creating Garden Database and Tables...</h2>
+
+<h2>Inserting Records Into Tables...</h2>
+
+<a href="index.jsp">Return to Index</a>
+</body>
+</html>

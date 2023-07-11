@@ -1,0 +1,61 @@
+<?xml-stylesheet type="text/css" href="example.css"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!-- Defines the XML Schema using the XML Schema namespace -->
+
+  <xs:element name="catalog">
+    <!-- Defines the "catalog" element -->
+
+    <xs:complexType>
+      <!-- Defines the complex type of the "catalog" element -->
+
+      <xs:sequence>
+        <!-- Defines the sequence of child elements within the "catalog" element -->
+
+        <xs:element name="book" maxOccurs="unbounded">
+          <!-- Defines the "book" element with maximum occurrence as unbounded (can appear multiple times) -->
+
+          <xs:complexType>
+            <!-- Defines the complex type of the "book" element -->
+
+            <xs:sequence>
+              <!-- Defines the sequence of child elements within the "book" element -->
+
+              <xs:element name="title" type="xs:string"/>
+              <!-- Defines the "title" element of type string -->
+
+              <xs:element name="author" type="xs:string"/>
+              <!-- Defines the "author" element of type string -->
+
+              <xs:element name="year" type="xs:integer"/>
+              <!-- Defines the "year" element of type integer -->
+
+              <xs:element name="genre" type="xs:string"/>
+              <!-- Defines the "genre" element of type string -->
+
+              <xs:element name="publisher" type="xs:string"/>
+              <!-- Defines the "publisher" element of type string -->
+
+              <xs:element name="details">
+                <!-- Defines the "details" element -->
+
+                <xs:complexType>
+                  <!-- Defines the complex type of the "details" element -->
+
+                  <xs:sequence>
+                    <!-- Defines the sequence of child elements within the "details" element -->
+
+                    <xs:element name="format" type="xs:string"/>
+                    <!-- Defines the "format" element of type string -->
+
+                    <xs:element name="price" type="xs:decimal"/>
+                    <!-- Defines the "price" element of type decimal -->
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

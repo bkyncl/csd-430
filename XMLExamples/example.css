@@ -1,0 +1,28 @@
+catalog {
+  display: block;
+  margin: 0 auto;
+}
+
+book {
+  display: block;
+  margin-bottom: 20px;
+}
+
+title, author, year, genre, publisher {
+  display: block;
+  font-weight: bold;
+}
+
+details {
+  display: block;
+  margin-top: 10px;
+}
+
+format, price {
+  display: block;
+  margin-left: 10px;
+}
+
+price {
+  color: green;
+}

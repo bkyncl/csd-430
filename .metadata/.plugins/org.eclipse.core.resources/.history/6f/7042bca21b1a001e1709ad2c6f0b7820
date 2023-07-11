@@ -1,0 +1,205 @@
+package kyncl_08.model;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class CreateModel {
+	private DataManager dataManager;
+	
+	public CreateModel(DataManager dataManager) {
+		this.dataManager = dataManager;
+	}
+	
+	public void createTables() {
+		Connection conn = null;
+        try {
+        	conn = dataManager.getConnection();
+        	
+        	
+        	// Drop insert trigger
+	        PreparedStatement dropInsertTriggerStatement = conn.prepareStatement("DROP TRIGGER IF EXISTS insert_trigger");
+	        dropInsertTriggerStatement.execute();
+	        
+	        // Drop delete trigger
+	        PreparedStatement dropDeleteTriggerStatement = conn.prepareStatement("DROP TRIGGER IF EXISTS delete_trigger");
+	        dropDeleteTriggerStatement.execute();
+	        
+	        // Drop update trigger
+	        PreparedStatement dropUpdateTriggerStatement = conn.prepareStatement("DROP TRIGGER IF EXISTS update_trigger");
+	        dropUpdateTriggerStatement.execute();
+	        
+	        // Drop tables
+	        PreparedStatement dropCategories = conn.prepareStatement(("DROP TABLE plant_category");
+	        PreparedStatement dropFruits = ;
+	        PreparedStatement dropVegetables= ;
+	        PreparedStatement dropHerbs = ;
+	        
+        	
+        	// Create the plant_category table
+            PreparedStatement categoryStatement = conn.prepareStatement("CREATE TABLE IF NOT EXISTS plant_category ("
+            		 + "category_id INT NOT NULL AUTO_INCREMENT,"
+                     + "category_name VARCHAR(50) NOT NULL,"
+                     + "plant_count INT NOT NULL DEFAULT 0,"
+                     + "PRIMARY KEY (category_id)"
+                     + ")");
+            categoryStatement.execute();
+            
+            System.out.println("category table created");
+            
+            // Create fruits table
+            PreparedStatement fruitsStatement = conn.prepareStatement("CREATE TABLE IF NOT EXISTS fruits ("
+                    + "fruit_id INT NOT NULL AUTO_INCREMENT,"
+                    + "fruit_name VARCHAR(50) NOT NULL,"
+                    + "category_id INT NOT NULL,"
+                    + "FOREIGN KEY (category_id) REFERENCES plant_category(category_id),"
+                    + "PRIMARY KEY (fruit_id)"
+                    + ")");
+            fruitsStatement.execute();
+            
+            System.out.println("fruits table created");
+            
+            // Create vegetables table
+            PreparedStatement vegetablesStatement = conn.prepareStatement("CREATE TABLE IF NOT EXISTS vegetables ("
+                    + "vegetable_id INT NOT NULL AUTO_INCREMENT,"
+                    + "vegetable_name VARCHAR(50) NOT NULL,"
+                    + "category_id INT NOT NULL,"
+                    + "FOREIGN KEY (category_id) REFERENCES plant_category(category_id),"
+                    + "PRIMARY KEY (vegetable_id)"
+                    + ")");
+            vegetablesStatement.execute();
+            
+            System.out.println("vegetable table created");
+            
+            // Create herbs table
+            PreparedStatement herbsStatement = conn.prepareStatement("CREATE TABLE IF NOT EXISTS herbs ("
+                    + "herb_id INT NOT NULL AUTO_INCREMENT,"
+                    + "herb_name VARCHAR(50) NOT NULL,"
+                    + "category_id INT NOT NULL,"
+                    + "FOREIGN KEY (category_id) REFERENCES plant_category(category_id),"
+                    + "PRIMARY KEY (herb_id)"
+                    + ")");
+            herbsStatement.execute();
+            
+            System.out.println("herb table created");
+            
+            // Create triggers for all tables (fruits, vegetables, herbs)
+            createTriggers("fruits");
+            createTriggers("vegetables");
+            createTriggers("herbs");
+            
+            System.out.println("triggers added for all tables");
+            
+            
+            
+        } catch (SQLException e) {
+            System.out.println("Error creating table: " + e.getMessage());
+        } finally {
+            dataManager.endConnection(conn);
+            System.out.println("connection closed");
+        }
+	}
+	
+	public void createTriggers(String tableName) {
+		Connection conn = null;
+	    try {
+	        conn = dataManager.getConnection();
+	        
+	        // Create trigger for inserting new records
+	        PreparedStatement insertTriggerStatement = conn.prepareStatement("CREATE TRIGGER insert_trigger AFTER INSERT ON " + tableName + " "
+	                + "FOR EACH ROW "
+	                + "UPDATE plant_category "
+	                + "SET plant_count = plant_count + 1 "
+	                + "WHERE category_id = NEW.category_id");
+	        insertTriggerStatement.execute();
+	        
+	        // Create trigger for deleting records
+	        PreparedStatement deleteTriggerStatement = conn.prepareStatement("CREATE TRIGGER delete_trigger AFTER DELETE ON " + tableName + " "
+	                + "FOR EACH ROW "
+	                + "UPDATE plant_category "
+	                + "SET plant_count = plant_count - 1 "
+	                + "WHERE category_id = OLD.category_id");
+	        deleteTriggerStatement.execute();
+	        
+	        // Create trigger for updating records
+	        PreparedStatement updateTriggerStatement = conn.prepareStatement("CREATE TRIGGER update_trigger AFTER UPDATE ON " + tableName + " "
+	                + "FOR EACH ROW "
+	                + "IF OLD.category_id != NEW.category_id THEN "
+	                + "UPDATE plant_category "
+	                + "SET plant_count = plant_count - 1 "
+	                + "WHERE category_id = OLD.category_id; "
+	                + "UPDATE plant_category "
+	                + "SET plant_count = plant_count + 1 "
+	                + "WHERE category_id = NEW.category_id; "
+	                + "END IF;");
+	        updateTriggerStatement.execute();
+	        
+	    } catch (SQLException e) {
+	        System.out.println("Error creating triggers: " + e.getMessage());
+	    } finally {
+	        dataManager.endConnection(conn);
+	    }
+	}
+	
+	public void insertData() {
+		Connection conn = null;
+	    try {
+	        conn = dataManager.getConnection();
+	        
+	     // Prepared statement for inserting into plant_category table
+	        PreparedStatement categoryInsertStatement = conn.prepareStatement("INSERT INTO plant_category (category_name) VALUES (?)");
+	        
+	        // Prepared statement for inserting into fruits table
+	        PreparedStatement fruitsInsertStatement = conn.prepareStatement("INSERT INTO fruits (fruit_name, category_id) VALUES (?, ?)");
+	        
+	        // Prepared statement for inserting into vegetables table
+	        PreparedStatement vegetablesInsertStatement = conn.prepareStatement("INSERT INTO vegetables (vegetable_name, category_id) VALUES (?, ?)");
+	        
+	        // Prepared statement for inserting into herbs table
+	        PreparedStatement herbsInsertStatement = conn.prepareStatement("INSERT INTO herbs (herb_name, category_id) VALUES (?, ?)");
+	        
+	        // Use the prepared statements to insert data into the tables
+	        
+	        categoryInsertStatement.setString(1, "Fruits"); // category_id 1
+	        categoryInsertStatement.execute();
+
+	        categoryInsertStatement.setString(1, "Vegetables"); // category_id 2
+	        categoryInsertStatement.execute();
+
+	        categoryInsertStatement.setString(1, "Herbs"); // category_id 3
+	        categoryInsertStatement.execute();
+	        
+	        
+	        fruitsInsertStatement.setString(1, "Apple");
+	        fruitsInsertStatement.setInt(2, 1);
+	        fruitsInsertStatement.setString(1, "Pear");
+	        fruitsInsertStatement.setInt(2, 1);
+	        fruitsInsertStatement.setString(1, "Banana");
+	        fruitsInsertStatement.setInt(2, 1);
+	        fruitsInsertStatement.execute();
+	        
+	        vegetablesInsertStatement.setString(1, "Carrot");
+	        vegetablesInsertStatement.setInt(2, 2);
+	        vegetablesInsertStatement.setString(1, "Peas");
+	        vegetablesInsertStatement.setInt(2, 2);
+	        vegetablesInsertStatement.setString(1, "Asparagus");
+	        vegetablesInsertStatement.setInt(2, 2);
+	        vegetablesInsertStatement.execute();
+	        
+	        herbsInsertStatement.setString(1, "Basil");
+	        herbsInsertStatement.setInt(2, 3);
+	        herbsInsertStatement.setString(1, "Thyme");
+	        herbsInsertStatement.setInt(2, 3);
+	        herbsInsertStatement.setString(1, "Cilantro");
+	        herbsInsertStatement.setInt(2, 3);
+	        herbsInsertStatement.execute();
+	        
+	        System.out.println("Data inserted successfully");
+	        
+	    } catch (SQLException e) {
+	        System.out.println("Error creating triggers: " + e.getMessage());
+	    } finally {
+	        dataManager.endConnection(conn);
+	    }
+	}
+}

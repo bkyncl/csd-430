@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <employee>
+        <name>John Doe</name>
+        <position>Manager</position>
+        <department>Finance</department>
+        <salary>50000</salary>
+    </employee>
+    <!-- Other employee records -->
+</catalog>

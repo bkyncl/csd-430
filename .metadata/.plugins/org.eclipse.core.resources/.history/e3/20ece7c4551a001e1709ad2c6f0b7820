@@ -1,0 +1,35 @@
+package kyncl_08.bean;
+
+public class Category implements java.io.Serializable {
+	private static final long serialVersionUID = 1L;
+	private int categoryId;
+    private String categoryName;
+    private int plantCount;
+
+    // Getters and setters
+    
+    public int getCategoryId() {
+        return categoryId;
+    }
+    
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+    
+    public String getCategoryName() {
+        return categoryName;
+    }
+    
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+    
+    public int getPlantCount() {
+        return plantCount;
+    }
+    
+    public void setPlantCount(int plantCount) {
+        this.plantCount = plantCount;
+    }
+
+}

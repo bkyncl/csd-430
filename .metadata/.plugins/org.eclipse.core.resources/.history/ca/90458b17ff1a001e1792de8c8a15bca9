@@ -1,0 +1,22 @@
+/* Table styles */
+body {
+  font-family: Arial, sans-serif;
+}
+table {
+  width: 50%;
+  border-collapse: collapse;
+}
+table tr:nth-child(even) {
+  background-color: #daf8e3; /* Replace with your desired color */
+}
+
+table th, table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+table th {
+  background-color: #005582;
+  color: #fff;
+}

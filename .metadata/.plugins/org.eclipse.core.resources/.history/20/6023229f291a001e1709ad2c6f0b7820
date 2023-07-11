@@ -1,0 +1,61 @@
+/* DataManager.java
+ * Module 8 Assignment
+ * Name: Brittany Kyncl
+ * Date: 6.30.23
+ * Course: CSD430
+ * Database connection model class
+ */
+package kyncl_08.model;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DataManager {
+	private String dbURL = "jdbc:mysql://localhost:3306/garden";
+	private String dbUserName = "student1";
+	private String dbPassword = "pass";
+
+	public void setDbURL(String dbURL) {
+		this.dbURL = dbURL;
+	}
+
+	public String getDbURL() {
+		return dbURL;
+	}
+
+	public void setDbUserName(String dbUserName) {
+		this.dbUserName = dbUserName;
+	}
+
+	public String getDbUserName() {
+		return dbUserName;
+	}
+
+	public void setDbPassword(String dbPassword) {
+		this.dbPassword = dbPassword;
+	}
+
+	public String getDbPassword() {
+		return dbPassword;
+	}
+
+	public Connection getConnection() {
+		Connection conn = null;
+		try {
+			conn = DriverManager.getConnection(getDbURL(), getDbUserName(), getDbPassword());
+		} catch (SQLException e) {
+			System.out.println("Could not connect to DB: " + e.getMessage());
+		}
+		return conn;
+	}
+
+	public void endConnection(Connection conn) {
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+			}
+		}
+	}
+}

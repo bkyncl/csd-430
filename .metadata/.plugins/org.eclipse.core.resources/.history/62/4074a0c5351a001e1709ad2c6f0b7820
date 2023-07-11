@@ -1,0 +1,93 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert Records Form</title>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 30%;
+        border: 2px solid #ddd;
+    }
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+        text-align: center;
+    }
+    td.label-cell {
+        text-align: right;
+        font-weight: bold;
+    }
+    input[type="text"],
+    textarea,
+    select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    #button-container {
+        text-align: center;
+        background-color: #f2f2f2;
+    }
+    #button {
+        display: inline-block;
+    }
+</style>
+</head>
+<body>
+	<h2>Insert a New Plant Into the Garden Database</h2>
+	<form action="form.jsp" method="POST">
+    <table>
+        <tr>
+            <th colspan="3">Enter Plant Information</th>
+        </tr>
+        <tr>
+            <td class="label-cell">
+                <label for="category">Plant Category:</label>
+            </td>
+            <td colspan="2">
+                <select name="category" id="category">
+                    <option value="1">Fruits</option>
+                    <option value="2">Vegetables</option>
+                    <option value="3">Herbs</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="label-cell">
+                <label for="name">Plant Name:</label>
+            </td>
+            <td colspan="2">
+                <input type="text" name="name" id="name" required maxlength="50">
+            </td>
+        </tr>
+        <tr>
+            <td class="label-cell">
+                <label for="description">Description:</label>
+            </td>
+            <td colspan="2">
+                <textarea name="description" id="description" maxlength="200"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td class="label-cell">
+                <label for="quantity">Quantity:</label>
+            </td>
+            <td colspan="2">
+                <input type="text" name="quantity" id="quantity" required pattern="[0-9]+">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" id="button-container">
+                <input id="button" type="submit" value="Insert New Plant">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

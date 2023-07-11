@@ -1,0 +1,37 @@
+/* Table styles */
+body {
+  font-family: Arial, sans-serif;
+}
+.container {
+	display: flex;
+	flex-wrap: wrap;
+}
+.left-div {
+  flex: 1 1 50%;
+}
+
+.right-div {
+  flex: 1 1 50%;
+}
+h2 {
+	text-decoration: underline;
+	text-align: center;
+}
+table {
+  width: 50%;
+  border-collapse: collapse;
+}
+table tr:nth-child(even) {
+  background-color: #dcf3ff; /* Replace with your desired color */
+}
+
+table th, table td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+table th {
+  background-color: #005582;
+  color: #fff;
+}

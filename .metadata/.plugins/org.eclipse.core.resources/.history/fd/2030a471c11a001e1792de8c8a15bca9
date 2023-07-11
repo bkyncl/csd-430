@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<person id='js890'>
+    <name>John Smith</name>
+    <email>John.Smith@yahoo.com</email>
+    <phone>650-123-4567</phone>
+    <address city='Palo Alto' state='CA' zip='94303' country='USA'>
+        <line1>JS Information Systems, Inc.</line1>
+        <line2>1001 San Antonio Road</line2>
+    </address>
+</person>

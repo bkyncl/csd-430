@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog>
+    <employee>
+        <name>John Doe</name>
+        <position>Manager</position>
+        <department>Finance</department>
+        <salary>50000</salary>
+    </employee>
+    <employee>
+        <name>Jane Smith</name>
+        <position>Software Engineer</position>
+        <department>Engineering</department>
+        <salary>60000</salary>
+    </employee>
+    <employee>
+        <name>Sarah Jones</name>
+        <position>HR Administrator</position>
+        <department>Human Resources</department>
+        <salary>45000</salary>
+    </employee>
+    <employee>
+        <name>Tom Clancy</name>
+        <position>Safety Officer</position>
+        <department>Security</department>
+        <salary>40000</salary>
+    </employee>
+    <employee>
+        <name>Mike Greggory</name>
+        <position>Systems Administrator</position>
+        <department>IT</department>
+        <salary>60000</salary>
+    </employee>
+    <employee>
+        <name>Josephina Sardines</name>
+        <position>Director</position>
+        <department>Safety and Training</department>
+        <salary>80000</salary>
+    </employee>
+</catalog>

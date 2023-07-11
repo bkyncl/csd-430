@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Garden Database Index</title>
+</head>
+<body>
+	<h2>Please click the "Create and Populate Garden DB" link if you have not already done so before navigating to the "Plant Entry Form"</h2>
+	<a href="<%=request.getContextPath()%>/plants?action=CreateAndPop">Create and Populate Garden DB, Tables, and Records</a>
+	<br>
+	<a href="/kyncl_08/form.jsp">To Plant Entry From</a>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v9.0 Server at localhost-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v9.0 Server at localhost" name="Tomcat v9.0 Server at localhost" runtime-id="Apache Tomcat v9.0" server-type="org.eclipse.jst.server.tomcat.90" server-type-id="org.eclipse.jst.server.tomcat.90" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="56">
+    <list key="modules" value0="kyncl_08::org.eclipse.jst.jee.server:kyncl_08::jst.web::4.0" value1="kyncl_mod9::org.eclipse.jst.jee.server:kyncl_mod9::jst.web::4.0" value2="testxPath::org.eclipse.jst.jee.server:testxPath::jst.web::4.0" value3="bkyncl_mod2::org.eclipse.jst.jee.server:bkyncl_mod2::jst.web::4.0" value4="bkyncl_mod3::org.eclipse.jst.jee.server:bkyncl_mod3::jst.web::4.0" value5="ebookshop::org.eclipse.jst.jee.server:ebookshop::jst.web::4.0" value6="eshop::org.eclipse.jst.jee.server:eshop::jst.web::4.0" value7="eshop1::org.eclipse.jst.jee.server:eshop1::jst.web::4.0" value8="mod8debug::org.eclipse.jst.jee.server:mod8debug::jst.web::4.0"/>
+  </server>
+</servers>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="J2EE_EXPORT_OVERWRITE" value="true"/>
+	<item key="J2EE_EXPORT_SOURCE" value="false"/>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v9.0"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\apache-tomcat-9.0.75\webapps\kyncl_mod9.war"/>
+		<item value="C:\apache-tomcat-9.0.75\webapps\kyncl_08.war"/>
+		<item value="C:\apache-tomcat-9.0.75\webapps\eshop.war"/>
+		<item value="C:\Users\britt\OneDrive\Desktop\mod8debug.war"/>
+		<item value="C:\apache-tomcat-9.0.75\webapps\ebookshop.war"/>
+	</list>
+	<list key="J2EE_IMPORT_null">
+		<item value="C:\Users\britt\Downloads\testxPath.war"/>
+		<item value="C:\Users\britt\Downloads\JSTLDemo.war"/>
+		<item value="C:\Users\britt\Downloads\Olson_08.war"/>
+		<item value="C:\Users\britt\Downloads\eshop.war"/>
+	</list>
+</section>

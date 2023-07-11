@@ -1,0 +1,37 @@
+<%-- 
+entrance_kynclJSP_41.jsp
+Module 4 assignment
+Name: Brittany Kyncl
+Date: 6.6.23
+Course: CSD430
+Create JSP that outputs requested content, displaying all of the information in a table format
+--%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.*, java.io.*"%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Module 4 Assignment</title>
+</head>
+<body>
+	<h2 id="top">Module 4 Assignment - Displaying Requested Form Information</h2>
+	<hr>
+	<table border="1">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+		</tr>
+		<tr>
+			<th>${firstName}</th>
+			<th>${lastName}</th>
+			<th>${email}</th>
+		</tr>
+	</table>
+	<hr>
+	<a href="#top">Back to Top</a>
+</body>
+</html>

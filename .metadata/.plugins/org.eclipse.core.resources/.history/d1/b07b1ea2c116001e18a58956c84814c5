@@ -1,0 +1,47 @@
+<%-- 
+buggy.jsp
+Module 8 DB Post - Debug Program
+Name: Brittany Kyncl
+Date: 6.29.23
+Course: CSD430
+This JSP file contains 3 bugs to fix
+--%>
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Buggy Program</title>
+</head>
+<body>
+	<h1>Get Value from bean</h1>
+
+	<jsp:useBean id="bookBean" class="mod8debug.BookBean" scope="session" />
+	
+	<jsp:setProperty name="bookBean" property="id" value="001" />
+	<jsp:setProperty name="bookBean" property="title" value="My New Book" />
+	<jsp:setProperty name="bookBean" property="author" value="George Steponapolis" />
+	
+
+	<table>
+		<tr>
+			<td>ID</td>
+			<td>:</td>
+			<td><jsp:getProperty name="emp" property="id" /></td>
+		</tr>
+		<tr>
+			<td>Title</td>
+			<td>:</td>
+			<td><jsp:getProperty name="emp" property="title" /></td>
+		</tr>
+		<tr>
+			<td>AUthore</td>
+			<td>:</td>
+			<td><jsp:getProperty name="emp" property="author" /></td>
+		</tr>
+		
+	</table>
+</body>
+</html>

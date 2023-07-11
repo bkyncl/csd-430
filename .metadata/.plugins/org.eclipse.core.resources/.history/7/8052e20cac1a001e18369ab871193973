@@ -1,0 +1,34 @@
+
+Certainly! Here's the DTD file with descriptive comments explaining the purpose of each line:
+
+xml
+Copy code
+<!ELEMENT catalog (book+)>
+<!-- The "catalog" element can contain one or more "book" elements -->
+
+<!ELEMENT book (title, author, year, genre, publisher, details)>
+<!-- The "book" element must contain "title", "author", "year", "genre", "publisher", and "details" elements -->
+
+<!ELEMENT title (#PCDATA)>
+<!-- The "title" element can contain parsed character data (text content) -->
+
+<!ELEMENT author (#PCDATA)>
+<!-- The "author" element can contain parsed character data (text content) -->
+
+<!ELEMENT year (#PCDATA)>
+<!-- The "year" element can contain parsed character data (text content) -->
+
+<!ELEMENT genre (#PCDATA)>
+<!-- The "genre" element can contain parsed character data (text content) -->
+
+<!ELEMENT publisher (#PCDATA)>
+<!-- The "publisher" element can contain parsed character data (text content) -->
+
+<!ELEMENT details (format, price)>
+<!-- The "details" element must contain "format" and "price" elements -->
+
+<!ELEMENT format (#PCDATA)>
+<!-- The "format" element can contain parsed character data (text content) -->
+
+<!ELEMENT price (#PCDATA)>
+<!-- The "price" element can contain parsed character data (text content) -->

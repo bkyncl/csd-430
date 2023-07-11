@@ -1,0 +1,157 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="kyncl_08.model.CreateModel" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<%
+		CreateModel plants = new CreateModel();
+	    
+	    try {
+	    	// create shop database 
+	    	shop.createShop();	    	
+	    } catch (SQLException e) {
+	    	out.println("<br>Error");
+			out.println("<br>Stack Trace: " + e.toString() + "<br>");
+	    }
+	    
+	    try {
+	    	// populate shop with tables and records
+	    	shop.populateShop();	    	
+	    } catch (SQLException e) {
+	    	out.println("<br>Error");
+			out.println("<br>Stack Trace: " + e.toString() + "<br>");
+	    }
+	    
+	    // get the output from the database operations within BuildShopDB to append to HTML
+	    String output = shop.getOutput();
+	%>
+	
+	<%-- Display initialization and record insertion progress to HTML --%>
+	<h2>Shop Database Initialization and Record Insertion</h2>
+	<%= output %>
+	
+	
+	<%-- Perform query on books table and display results --%>
+	<h2>Shop Database 'books' Table Query Results</h2>
+	
+	<%
+		// database connection variables
+		Connection conn = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+		ResultSetMetaData rsMeta = null;
+		
+		// database connection parameters as defined in web.xml
+		String url = application.getInitParameter("db-url");
+		String username = application.getInitParameter("db-username");
+		String password = application.getInitParameter("db-password");
+    
+		try {
+			// Establish the database connection
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(url, username, password);
+			stmt = conn.createStatement();
+			out.println("Connection Established: " + url);
+			
+			// execute a query to retrieve all records from books table
+			rs = stmt.executeQuery("SELECT * FROM books");
+			out.println("<br>Displaying all from table: books");
+			
+			// display results formatted in HTML table
+			%><table border="1"><%
+			rsMeta = rs.getMetaData();
+			int nCols = rsMeta.getColumnCount();
+			%><tr><%
+			for (int kCol = 1; kCol <= nCols; kCol++) {
+				out.print("<td><b>" + rsMeta.getColumnName(kCol) + "</b></td>");
+			}
+			%></tr><%
+			while (rs.next()) {
+				%><tr><%
+				for (int kCol = 1; kCol <= nCols; kCol++) {
+					out.print("<td>" + rs.getString(kCol) + "</td>");
+				}
+				%></tr><%
+			}
+			%></table><%
+		} catch (Exception e) {
+			out.println("<br>Error");
+			out.println("<br>Stack Trace: " + e.toString() + "<br>");
+		} finally {
+			try {
+				// close all resources of db connection
+				if (rs != null)
+					rs.close();
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close();
+				out.println("Connection closed: " + url);
+			} catch (Exception e) {
+				out.println("<br>Error on close");
+				out.println("<br>Stack Trace: " + e.toString() + "<br>");
+			}
+		}
+	%>
+	
+	<%-- Perform query on books table and display results --%>
+	<h2>Shop Database 'categories' Table Query Results</h2>
+	
+	<%
+
+    
+		try {
+			// Establish the database connection
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(url, username, password);
+			stmt = conn.createStatement();
+			out.println("Connection Established: " + url);
+			
+			// execute a query to retrieve all records from categories table
+			rs = stmt.executeQuery("SELECT * FROM categories");
+			out.println("<br>Displaying all from table: categories");
+			
+			// display results formatted in HTML table
+			%><table border="1"><%
+			rsMeta = rs.getMetaData();
+			int nCols = rsMeta.getColumnCount();
+			%><tr><%
+			for (int kCol = 1; kCol <= nCols; kCol++) {
+				out.print("<td><b>" + rsMeta.getColumnName(kCol) + "</b></td>");
+			}
+			%></tr><%
+			while (rs.next()) {
+				%><tr><%
+				for (int kCol = 1; kCol <= nCols; kCol++) {
+					out.print("<td>" + rs.getString(kCol) + "</td>");
+				}
+				%></tr><%
+			}
+			%></table><%
+		} catch (Exception e) {
+			out.println("<br>Error");
+			out.println("<br>Stack Trace: " + e.toString() + "<br>");
+		} finally {
+			try {
+				// close all resources of db connection
+				if (rs != null)
+					rs.close();
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close();
+				out.println("Connection closed: " + url);
+			} catch (Exception e) {
+				out.println("<br>Error on close");
+				out.println("<br>Stack Trace: " + e.toString() + "<br>");
+			}
+		}
+	%>
+</body>
+</html>
