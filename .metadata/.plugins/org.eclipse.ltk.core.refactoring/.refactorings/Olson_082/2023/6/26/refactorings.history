@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;Olson_082/src/main/webapp/CreateandPopulateTable.jsp&apos; to &apos;CreateAndPopulateTable.jsp&apos;" description="Rename resource &apos;CreateandPopulateTable.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/CreateandPopulateTable.jsp" name="CreateAndPopulateTable.jsp" stamp="1688154854100" updateReferences="true"/>
-</session>
