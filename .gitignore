@@ -1,1 +1,3 @@
-docx_assignments/*
+docx_assignments/
+.settings/
+Servers/
