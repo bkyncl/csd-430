@@ -1,0 +1,97 @@
+<!-- 
+student_form.xhtml
+Module 10 assignment
+Name: Brittany Kyncl
+Date: 7.16.23
+Course: CSD430
+This XHTML file represents a student registration form using JSF (JavaServer Faces).
+It provides a user interface for capturing student information such as first name, last name,
+student ID, email, gender, languages, and country. The form includes validation and error handling
+for required fields, length constraints, email format, and selection of gender and languages.
+Upon submission, the form triggers the "myresponse" action, which navigates to the response page to entered info.
+ -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <f:view> <!-- Defines the root JSF view -->
+        <h:head> <!-- Represents the head section of the HTML document -->
+            <title>Student Registration - Form</title> <!-- Sets the page title -->
+            <style>
+                .error {
+                    color: red;
+                }
+            </style>
+        </h:head>
+        <h:body> <!-- Represents the body section of the HTML document -->
+        
+        	<ui:insert name="header"> <!-- Includes the header -->
+                <ui:include src="header.xhtml" />
+            </ui:insert>
+            
+            <h:form> <!-- Represents an HTML form -->
+            	<!-- Creates a label for an input field -->
+                <h:outputLabel for="firstName" value="Enter First Name: " /> 
+                <!-- Creates an input text field -->
+                <h:inputText id="firstName" value="#{student.firstName}" required="true" requiredMessage="Error: First Name Required"> 
+                    <f:validateLength minimum="3" /> <!-- Adds a validation rule for the input text length -->
+                </h:inputText>
+                <h:message for="firstName" styleClass="error" /> <!-- Displays error messages for the input field -->
+                <br/>
+				<!-- Creates a label for an input field -->
+                <h:outputLabel for="lastName" value="Enter Last Name: " />
+                <!-- Creates an input text field -->
+                <h:inputText id="lastName" value="#{student.lastName}" required="true" requiredMessage="Error: Last Name Required">
+                    <f:validateLength minimum="3" /> <!-- Adds a validation rule for the input text length -->
+                </h:inputText>
+                <h:message for="lastName" styleClass="error" /> <!-- Displays error messages for the input field -->
+                <br/>
+				<!-- Creates a label for an input field -->
+                <h:outputLabel for="studentId" value="Enter Student ID: " />
+                <!-- Creates an input text field -->
+                <h:inputText id="studentId" value="#{student.studentId}" required="true" requiredMessage="Error: Required field">
+                    <f:validator validatorId="studentValidator" /> <!-- Adds a custom validation for the input field -->
+                </h:inputText>
+                <h:message for="studentId" styleClass="error" /> <!-- Displays error messages for the input field -->
+                <br/>
+				<!-- Creates a label for an input field -->
+                <h:outputLabel for="email" value="Enter Student Email: " />
+                <!-- Creates an input text field -->
+                <h:inputText id="email" value="#{student.email}" required="true" requiredMessage="Error: Email Required">
+                <!-- Adds a regular expression validation for the email format -->
+                    <f:validateRegex pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}" /> 
+                </h:inputText>
+                <h:message for="email" styleClass="error" /> <!-- Displays error messages for the input field -->
+                <br/>
+				<!-- Creates a label for an input field -->
+                <h:outputLabel for="gender" value="Select Gender: " />
+                <!-- Creates a radio button group -->
+                <h:selectOneRadio id="gender" value="#{student.gender}" required="true" requiredMessage="Error: Gender Required"> 
+                    <f:selectItems value="#{formOptions.genderOptions}" /> <!-- Populates the radio button options from a managed bean -->
+                </h:selectOneRadio>
+                <h:messages for="gender" styleClass="error" /> <!-- Displays error messages for the radio button group -->
+                <!-- Creates a label for an input field -->
+                <h:outputLabel for="languages" value="Select Language(s): " />
+                <!-- Creates a checkbox group -->
+                <h:selectManyCheckbox id="languages" value="#{student.languages}" required="true" requiredMessage="Error: Language Required"> 
+                    <f:selectItems value="#{formOptions.languageOptions}" /> <!-- Populates the checkbox options from a managed bean -->
+                </h:selectManyCheckbox>
+                <h:messages for="languages" styleClass="error" /> <!-- Displays error messages for the checkbox group -->
+                <!-- Creates a label for an input field -->
+                <h:outputLabel for="country" value="Enter Student Country " />
+                <!-- Creates a dropdown menu -->
+                <h:selectOneMenu id="country" value="#{student.country}"> 
+                    <f:selectItems value="#{formOptions.countryOptions}" /> <!-- Populates the dropdown options from a managed bean -->
+                </h:selectOneMenu>
+                <br/>
+                <h:commandButton value="submit" action="myresponse" /> <!-- Creates a submit button with action to navigate to response page -->
+            </h:form>
+            
+            <ui:insert name="footer"> <!-- Includes the footer -->
+                <ui:include src="footer.xhtml" />
+            </ui:insert>
+        </h:body>
+    </f:view>
+</html>

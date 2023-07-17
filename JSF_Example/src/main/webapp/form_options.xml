@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root>
+<root>
+	<countries>
+	  <country>Brazil</country>
+	  <country>China</country>
+	  <country>France</country>
+	  <country>Germany</country>
+	  <country>India</country>
+	  <country>Turkey</country>
+	  <country>United Kingdom</country>
+	  <country>United States</country>
+	  <country>Canada</country>
+	  <country>Australia</country>
+	  <country>Japan</country>
+	  <country>Mexico</country>
+	  <country>Russia</country>
+	  <country>Italy</country>
+	  <country>Spain</country>
+	  <country>South Korea</country>
+	  <country>South Africa</country>
+	  <country>Argentina</country>
+	  <country>Netherlands</country>
+	  <country>Switzerland</country>
+	  <country>Sweden</country>
+	  <country>Denmark</country>
+	  <country>Norway</country>
+	</countries>
+	<genders>
+	  <gender>Male</gender>
+	  <gender>Female</gender>
+	  <gender>Non-Binary</gender>
+	  <gender>Other</gender>
+	</genders>
+	<languages>
+	  <language>English</language>
+	  <language>Spanish</language>
+	  <language>French</language>
+	  <language>Mandarin Chinese</language>
+	  <language>Arabic</language>
+	  <language>German</language>
+	  <language>Hindi</language>
+	  <language>Japanese</language>
+	  <language>Korean</language>
+	</languages>
+</root>

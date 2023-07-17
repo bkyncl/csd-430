@@ -1,0 +1,60 @@
+<!-- 
+myresponse.xhtml
+Module 10 assignment
+Name: Brittany Kyncl
+Date: 7.16.23
+Course: CSD430
+This XHTML file represents a student information display page using JSF (JavaServer Faces).
+It renders a table that shows various details of a student, including their first name, last name,
+student ID, email, gender, country, and languages. The information is retrieved from the "student"
+object, which is expected to be available in the backing bean. The page utilizes JSF tags such as
+<h:dataTable>, <h:column>, <h:panelGrid>, <h:outputText>, <f:facet>, <ui:repeat>, and others to define
+the layout and populate data dynamically.
+ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <title>Student Registration - Response</title>
+</head>
+<body>
+	<ui:insert name="header"> <!-- Includes the header -->
+       <ui:include src="header.xhtml" />
+    </ui:insert>
+            
+    <h2>Registration Successful</h2>
+    <!-- Creates a table to display student information -->	   
+    <!-- Represents a panel grid with 2 columns for student info displaying first label then value-->      
+    <!-- FACET Represents a header facet for the column -->	       
+     <h:panelGrid columns="2" border="1" cellpadding="10" cellspacing="1">
+         <f:facet name="header">
+         	<h:outputText value="Student Information" />
+         </f:facet>
+         <h:outputLabel value="First Name: " style="white-space: nowrap;" />
+         <h:outputText value="#{student.firstName}" style="white-space: nowrap;" />
+         <h:outputLabel value="Last Name: " style="white-space: nowrap;" />
+         <h:outputText value="#{student.lastName}" style="white-space: nowrap;" />
+         <h:outputLabel value="Student ID: " style="white-space: nowrap;" />
+         <h:outputText value="#{student.studentId}" style="white-space: nowrap;" />
+         <h:outputLabel value="Email: " style="white-space: nowrap;" />
+         <h:outputText value="#{student.email}" style="white-space: nowrap;" />
+         <h:outputLabel value="Gender: "  style="white-space: nowrap;"/>
+         <h:outputText value="#{student.gender}" style="white-space: nowrap;"/>
+         <h:outputLabel value="Country: " style="white-space: nowrap;" />
+         <h:outputText value="#{student.country}" style="white-space: nowrap;" />
+         <h:outputLabel value="Languages: " style="white-space: nowrap;" />
+         <h:panelGroup>
+		    <ui:repeat value="#{student.languages}" var="lang" varStatus="status">
+		        <h:outputText value="#{lang}" style="white-space: nowrap;" />
+		        <h:outputText value="#{not status.last ? ', ' : ''}" rendered="#{not status.last}" />
+		    </ui:repeat>
+		</h:panelGroup>
+     </h:panelGrid>
+
+    <ui:insert name="footer"> <!-- Includes the footer -->
+        <ui:include src="footer.xhtml" />
+    </ui:insert>
+</body>
+</html>
