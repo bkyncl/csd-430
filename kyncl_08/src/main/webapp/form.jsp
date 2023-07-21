@@ -1,8 +1,8 @@
 <%-- 
-index.jsp
+form.jsp
 Module 8 assignment
 Name: Brittany Kyncl
-Date: 7.4.22
+Date: 7.4.23
 Course: CSD430
 Form for inserting new plant record into garden database. The form data is sent to
 servlet with "insert" action which handles the form submission and uses a Java Bean 'Plant.java' to insert
