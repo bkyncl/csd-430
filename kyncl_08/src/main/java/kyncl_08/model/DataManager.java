@@ -1,7 +1,7 @@
 /* DataManager.java
  * Module 8 Assignment
  * Name: Brittany Kyncl
- * Date: 7.4.22
+ * Date: 7.4.23
  * Course: CSD430
  * Database connection model class provides methods for establishing database connection
  * inserting plant into plants table, retrieving all plants from the plants table,
