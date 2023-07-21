@@ -2,7 +2,7 @@
 index.jsp
 Module 8 assignment
 Name: Brittany Kyncl
-Date: 7.4.22
+Date: 7.4.23
 Course: CSD430
 Index page for initial navigation to database creation and record population or to the form entry page
 --%>
