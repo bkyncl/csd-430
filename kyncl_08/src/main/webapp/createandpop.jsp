@@ -1,5 +1,5 @@
 <%-- 
-index.jsp
+createandpop.jsp
 Module 8 assignment
 Name: Brittany Kyncl
 Date: 7.4.22
