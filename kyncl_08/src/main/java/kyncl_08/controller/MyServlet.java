@@ -1,7 +1,7 @@
 /* MyServlet.java
  * Module 8 Assignment
  * Name: Brittany Kyncl
- * Date: 7.4.22
+ * Date: 7.4.23
  * Course: CSD430
  * MyServlet, which serves as the controller for managing plants in "garden" database management web app. 
  * The servlet handles HTTP requests related to the management of the garden database, 
