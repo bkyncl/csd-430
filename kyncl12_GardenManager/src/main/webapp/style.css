@@ -1,0 +1,125 @@
+/* 
+styles.css 
+Module 12 assignment
+Name: Brittany Kyncl
+Date: 7.5.23
+Course: CSD430
+stying for mod12_GardenManager app
+*/
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	background-color: #fbf7db;
+}
+.header {
+    background-color: #d1dfe9;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 5px solid #336699;
+}
+
+.header h1 {
+    color: #336699;
+}
+.menu {
+	float: left;
+	width: 30vh;
+	background-color: #d8e7a9;
+	height: 50vh;
+	padding-top: 20px;
+	border-right: 3px solid #336699;
+	border-bottom: 3px solid #336699;
+}
+.menu h3 {
+	color: #004000;
+	margin-left: 30px;
+	margin-bottom: 3px;
+	margin-top: 10px;
+}
+.menu input[type="text"] {
+	width: 70%;
+}
+.menu ul {
+	list-style: none;
+	margin: 0px;
+    padding: 0;
+}
+.menu li {
+	padding: 3px;
+	margin-left: 40px;
+}
+.menu li input{
+	margin-bottom: 10px;
+}
+.menu li a {
+	text-decoration: none;	
+	color: #000000;
+}
+.menu li a:hover {
+    color: #800080;
+    text-decoration: underline;
+}
+.search-container, .creation-container {
+	margin: 30px;
+}
+table {
+    border-collapse: collapse;
+    border: 2px solid #ddd;
+    width: 100%;
+    background-color: #fff;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+td.label-cell {
+    text-align: right;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    box-sizing: border-box;
+}
+/* Zebra-striping */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff; /* This is optional, as it's the same as the table background color */
+}
+#button-container {
+    text-align: center;
+    background-color: #f2f2f2;
+}
+#button {
+    display: inline-block;
+}
+.result-table th, .result-table td {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.form-container > div {
+    flex: 1 1 100%;
+    padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .form-container > div {
+        flex: 1 1 30%;
+    }
+}

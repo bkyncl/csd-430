@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>garden</short-name>
+    <uri>http://kyncl12_GardenManager.com/taglibs/garden</uri>
+
+    <tag>
+        <name>plantTable</name>
+        <tag-class>kyncl12_GardenManager.tags.PlantTableTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>plants</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.List&lt;mod12_GardenManager.bean.Plant&gt;</type>
+        </attribute>
+        <attribute>
+            <name>categories</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.List&lt;mod12_GardenManager.bean.Category&gt;</type>
+        </attribute>
+    </tag>
+    <tag>
+        <name>searchResults</name>
+        <tag-class>kyncl12_GardenManager.tags.SearchResultsTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>searchResults</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.List</type>
+        </attribute>
+        <attribute>
+            <name>categories</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.List</type>
+        </attribute>
+    </tag>
+</taglib>
