@@ -2,7 +2,7 @@
 index.jsp
 Module 9 assignment
 Name: Brittany Kyncl
-Date: 7.5.22
+Date: 7.5.23
 Course: CSD430
 File to example the usage the usage of JSTL and XPath to parse XML data, 
 iterate over XML elements, apply conditional logic, and display the data in with customized styling.

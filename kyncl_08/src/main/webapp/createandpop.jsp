@@ -1,8 +1,8 @@
 <%-- 
-index.jsp
+createandpop.jsp
 Module 8 assignment
 Name: Brittany Kyncl
-Date: 7.4.22
+Date: 7.4.23
 Course: CSD430
 Page to display successfull database creation and record insertion 
 --%>

@@ -1,7 +1,7 @@
 /* CreateModel.java
  * Module 8 Assignment
  * Name: Brittany Kyncl
- * Date: 7.4.22
+ * Date: 7.4.23
  * Course: CSD430
  * CreateModel, responsible for creating and populating the garden database tables,
  * as well as creating triggers for data manipulation.

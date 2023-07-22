@@ -1,7 +1,7 @@
 /* Plant.java
  * Module 8 Assignment
  * Name: Brittany Kyncl
- * Date: 7.4.22
+ * Date: 7.4.23
  * Course: CSD430
  * Java Bean class represents plant object of the the plants table data model of the applications database
  * used within this applications context as a data structure
