@@ -29,7 +29,7 @@ public class CreateModel {
         	conn = dataManager.getConnection();
         	
         	// Drop and create the garden database
-	        PreparedStatement dropGarden = conn.prepareStatement("DROP DATABASE garden");
+	        PreparedStatement dropGarden = conn.prepareStatement("DROP DATABASE IF EXISTS     garden");
 	        PreparedStatement createGarden = conn.prepareStatement("CREATE DATABASE garden");
 	        dropGarden.execute();
 	        createGarden.execute();
